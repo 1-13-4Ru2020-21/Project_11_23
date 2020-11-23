@@ -1,1 +1,22 @@
-Leadott munkák
+Leadott munkák!
+
+Juhos Benjamin---------------------------------------------------------
+def beilleszteses_rendez(x, n): #x(tomb), n(tomb hossz)
+    import random
+    import timeit
+    start = timeit.default_timer()
+    print(x)
+    for i in range(0, n):
+        j = i-1
+        y = x[i]
+        while j >= 0 and x[j] > y:
+            x[j+1] = x[j]
+            j = j - 1
+        x[j+1] = y
+    stop = timeit.default_timer()
+    futasi_ido = stop-start
+    print('\nA program futási ideje:'+ str(futasi_ido))
+    print(x)
+    return (x)
+
+----------------------------------------------------------------------
