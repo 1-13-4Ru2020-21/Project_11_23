@@ -21,19 +21,104 @@ def beilleszteses_rendez(x, n): #x(tomb), n(tomb hossz)
     return (x)
 
 ----------------------------------------------------------------------
-Idő:  
+Idő:  19:13
 Baranyai Áron---------------------------------------------------------
+x = [50, 30, 9, 1, 63, 22, 20, 3, 6, 11, 51]
+def rendezes(x):
+    print("Eredeti tömb: ")
+    print (x)
+    for i in range(len(x) - 1):
+        for j in range(i + 1, len(x)):
+            if x[i] > x[j]:
+                x[i], x[j] = x[j], x[i]
+    print("A rendezett tömb: ")
+    print(x)
+    return(x)
+rendezes(x)
 
+x = [50, 30, 9, 1, 63, 22, 20, 3, 6, 11, 51]
+def rendezes(x):
+    print("Eredeti tömb: ")
+    print (x)
+    for i in range(len(x) - 1):
+        for j in range(i + 1, len(x)):
+            if x[i] > x[j]:
+                x[i], x[j] = x[j], x[i]
+    print("A rendezett tömb: ")
+    print(x)
+rendezes(x)
 ----------------------------------------------------------------------
-Idő: 
+Idő: 15:33
 Ózdi Árpád------------------------------------------------------------
+import math,os,time
 
+def rendminkivel():
+    print("Rendezés minimum kiválasztással.")
+    tomb=[3,6,12,4231,2,-1,3,-2]
+    print("Eredeti lista: ",tomb)
+
+    for i in range(0,len(tomb)):
+        mini=i
+        for j in range(i+1,len(tomb)):
+            if tomb[j]<tomb[mini]:
+                mini=j
+                tomb[i],tomb[mini]=tomb[mini],tomb[i]
+    print("Rendezett: ",tomb)
+rendminkivel()
+
+tomb=[3,6,12,4231,2,-1,3,-2]
+def rendminkivel(tomb):
+    for i in range(0,len(tomb)):
+        mini=i
+        for j in range(i+1,len(tomb)):
+            if tomb[j]<tomb[mini]:
+                mini=j
+                tomb[i],tomb[mini]=tomb[mini],tomb[i]
+    return(tomb)
+dd=rendminkivel(tomb)
+print("Rendezett 2.0 ", dd)
 ----------------------------------------------------------------------
-Idő: 
+Idő: 15:25
 Sánta Ricsi-----------------------------------------------------------
-
+def javbub1(tomb):
+    print('Javított buborek')
+    i = len(tomb)
+    print('Rendezés elött: ')
+    print(tomb)
+    start = timeit.default_timer()
+    while i >= 2:
+        cs = 0
+        for j in range(0, i-1):
+            if tomb[j] > tomb[j+1]:
+                tomb[j], tomb[j+1] = tomb[j+1], tomb[j]
+                cs = j
+        i = cs
+    stop = timeit.default_timer()
+    print("A rendezés futási ideje: ", stop-start)
+    print('Rendezés után: ')
+    print(tomb)
 ----------------------------------------------------------------------
-Idő: 
+Idő: 18:59
 Kálmán Gerő-----------------------------------------------------------
-
+def shellSort1(arr):
+    n = len(arr)
+    gap = n/2
+    print('\nEredeti tömb:')
+    print(arr)
+    i = len(arr)
+    start = timeit.default_timer()
+    while gap > 0:
+        gap = int(gap)
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+            while j >= gap and arr[j-gap] >temp:
+                arr[j] = arr[j-gap]
+                j -= gap
+                arr[j] = temp
+        gap /= 2
+    stop = timeit.default_timer()
+    print("A rendezés futási ideje: ", stop - start)
+    print('rendezet')
+    print(arr)
 ----------------------------------------------------------------------
